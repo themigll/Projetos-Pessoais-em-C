@@ -1,46 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <locale.h>
 
-int main() {
-    char operador;
-    float num1, num2;
+int main(void) {
 
-    printf("Escolha uma operacao (+,-,*,/): ");
-    scanf(" %c", &operador);
+    float nota1, nota2, nota3, nota4, media;
 
-    printf("Digite seu primeiro numero: ");
-    scanf("%f", &num1);
+    printf("Digite sua nota do Primeiro Bimestre: ");
+    scanf("%f", &nota1);
 
-    printf("Digite seu segundo numero: ");
-    scanf("%f", &num2);
+    printf("Digite sua nota do Segundo Bimestre: ");
+    scanf("%f", &nota2);
 
-    printf("\n");
+    printf("Digite sua nota do Terceiro Bimestre: ");
+    scanf("%f", &nota3);
 
-    switch(operador) {
-        case '+':
-            printf("Resultado: %.2f\n", num1 + num2);
-            break;
+    printf("Digite sua nota do Quarto Bimestre: ");
+    scanf("%f", &nota4);
 
-        case '-':
-            printf("Resultado: %.2f\n", num1 - num2);
-            break;
+    media = (nota1 + nota2 + nota3 + nota4) / 4;
 
-        case '*':
-            printf("Resultado: %.2f\n", num1 * num2);
-            break;
-
-        case '/':
-            if (num2 == 0) {
-                printf("Error: Nao e possivel dividir por zero!\n");
-            } else {
-                printf("Resultado: %.2f\n", num1 / num2);
-            }
-            break;
-
-        default:
-            printf("Error: Operador invalido!\n");
-    }
+    printf("Sua media e: %.2f\n", media);
 
     system("pause");
+
     return 0;
 }
